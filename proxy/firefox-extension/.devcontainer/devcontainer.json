@@ -1,0 +1,11 @@
+{
+    "image": "node:19.4.0",
+    "onCreateCommand": "npm i -g grunt-cli",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "xabikos.JavaScriptSnippets"
+            ]
+        }
+    }
+}
