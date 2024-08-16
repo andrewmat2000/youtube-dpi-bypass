@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube DPI bypass",
+    "version": "1.0",
+    "description": "DPI bypass for russian users.",
+    "icons": {
+        "512": "icons/border-512.png"
+    },
+    "permissions": [
+        "proxy"
+    ],
+    "host_permissions": [
+        "*://www.youtube.com/*",
+        "*://*.googlevideo.com/*",
+        "*://i.ytimg.com/*",
+        "*://yt3.ggpht.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
