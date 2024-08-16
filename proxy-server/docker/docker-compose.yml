@@ -1,0 +1,9 @@
+name: "spoof-dpi"
+
+services:
+  spoof-dpi:
+    restart: unless-stopped
+    build: .
+    ports:
+      - 8080:8080
+

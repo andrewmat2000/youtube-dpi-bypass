@@ -1,0 +1,10 @@
+[Unit]
+Description=Spoof dpi daemon
+After=network.target
+
+[Service]
+User=root
+ExecStart=<HOME>/.spoof-dpi/bin/spoof-dpi -addr 0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
