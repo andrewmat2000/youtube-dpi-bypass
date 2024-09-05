@@ -5,4 +5,4 @@ RUN apt update &&\
 
 RUN curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s linux-amd64
 
-ENTRYPOINT [ "/root/.spoof-dpi/bin/spoof-dpi", "-addr", "0.0.0.0" ]
+ENTRYPOINT [ "/root/.spoofdpi/bin/spoofdpi", "-addr", "0.0.0.0" ]
