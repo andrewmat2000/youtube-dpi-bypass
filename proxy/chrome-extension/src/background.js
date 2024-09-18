@@ -7,10 +7,10 @@ var config = {
             port: 8080
         },
         bypassList: [
-            "*://www.youtube.com/*",
-            "*://*.googlevideo.com/*",
-            "*://i.ytimg.com/*",
-            "*://yt3.ggpht.com/*"
+            "youtube.com",
+            "googlevideo.com",
+            "ytimg.com",
+            "yt3.ggpht.com"
         ]
     }
 };
