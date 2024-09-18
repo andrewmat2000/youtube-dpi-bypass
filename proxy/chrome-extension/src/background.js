@@ -1,9 +1,9 @@
 var config = {
     mode: "pac_script",
     pacScript: {
-        data: "const array = ['www.youtube.com', 'googlevideo.com', 'ytimg.com', 'yt3.ggpht.com]" +
+        data: "const array = ['www.youtube.com', 'googlevideo.com', 'ytimg.com', 'yt3.ggpht.com'];\n" +
             "function FindProxyForURL(url, host) {\n" +
-            "  if (array.findIndex(x => host.include(x)) != -1)\n" +
+            "  if (array.findIndex(x => url.includes(x)) != -1)\n" +
             "    return 'PROXY localhost:8080';\n" +
             "  return 'DIRECT';\n" +
             "}"
