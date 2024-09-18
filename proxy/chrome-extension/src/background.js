@@ -1,17 +1,12 @@
 var config = {
-    mode: "fixed_servers",
-    rules: {
-        singleProxy: {
-            scheme: "http",
-            host: "localhost",
-            port: 8080
-        },
-        bypassList: [
-            "youtube.com",
-            "googlevideo.com",
-            "ytimg.com",
-            "yt3.ggpht.com"
-        ]
+    mode: "pac_script",
+    pacScript: {
+        data: "const array = ['www.youtube.com', 'googlevideo.com', 'ytimg.com', 'yt3.ggpht.com]" +
+            "function FindProxyForURL(url, host) {\n" +
+            "  if (array.findIndex(x => host.include(x)) != -1)\n" +
+            "    return 'PROXY localhost:8080';\n" +
+            "  return 'DIRECT';\n" +
+            "}"
     }
 };
 
