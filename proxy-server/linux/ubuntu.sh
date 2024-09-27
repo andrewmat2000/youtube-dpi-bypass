@@ -1,24 +1,12 @@
 #!/bin/bash
 
-if ! command -v curl &> /dev/null; then
-    echo "Curl not exists. Installing..."
+if ! command -v npm &> /dev/null; then
+    echo "Npm not exists. Installing..."
     sudo apt update
-    sudo apt install curl -y
+    sudo apt install nodejs -y
 fi
 
-curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s linux-amd64
-
-echo ""
-echo ""
-echo ""
-echo =======================================================
-echo ""
-echo spoof-dpi was installed to ~/.spoof-dpi/bin
-echo ""
-echo =======================================================
-echo ""
-echo ""
-echo ""
+npm i -g demergi
 
 PATTERN="^((y)|(д)|(yes)|(нуы)|(n)|(н)|(no)|(тщ))$"
 
@@ -34,11 +22,11 @@ done
 PATTERN="^((y)|(д)|(yes))$"
 
 if [[ $RESPONSE =~ $PATTERN ]]; then
-  sudo cp spoof-dpi.service /etc/systemd/system
+  sudo cp demergi.service /etc/systemd/system
 
-  sudo sed -i "s|<HOME>|$HOME|" /etc/systemd/system/spoof-dpi.service
-  sudo systemctl start spoof-dpi.service
-  sudo systemctl enable spoof-dpi.service
+  sudo sed -i "s|<HOME>|$HOME|" /etc/systemd/system/demergi.service
+  sudo systemctl start demergi.service
+  sudo systemctl enable demergi.service
   
-  journalctl --no-pager -u spoof-dpi.service
+  journalctl --no-pager -u demergi.service
 fi

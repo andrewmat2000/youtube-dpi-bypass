@@ -1,10 +1,10 @@
 [Unit]
-Description=Spoof dpi daemon
+Description=Demergi daemon
 After=network.target
 
 [Service]
 User=root
-ExecStart=<HOME>/.spoof-dpi/bin/spoof-dpi -addr 0.0.0.0
+ExecStart=demergi
 
 [Install]
 WantedBy=multi-user.target
