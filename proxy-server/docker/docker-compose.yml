@@ -1,7 +1,7 @@
 name: "demergi"
 
 services:
-  spoof-dpi:
+  demergi:
     restart: unless-stopped
     build: .
     ports:
